@@ -1,0 +1,8 @@
+A sample size of 2 per group yields a power of 0.09
+A sample size of 3 per group yields a power of 0.23
+A sample size of 4 per group yields a power of 0.4
+A sample size of 5 per group yields a power of 0.52
+A sample size of 6 per group yields a power of 0.65
+A sample size of 7 per group yields a power of 0.61
+A sample size of 8 per group yields a power of 0.76
+Using alpha = 0.05 with an expected effect size of 0.8, a sample size of 9 per group is necessary to achieve a power of 0.85

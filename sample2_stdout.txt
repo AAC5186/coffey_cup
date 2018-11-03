@@ -1,0 +1,1 @@
+Using alpha = 0.05 with an expected effect size of 0.8 and 7 subjects per group, this experiment has a power of 0.65
