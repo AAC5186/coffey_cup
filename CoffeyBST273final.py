@@ -18,6 +18,12 @@ parser.add_argument(
 	dest = "alpha",
 	help = "The probability of rejecting the null hypothesis when the null hypothesis is true",
 )
+
+"""
+Eric: Probably useful to indicate that this "effect" is the difference in group
+means relative to a s.d. of 1, since you have the latter as a fixed param.
+"""
+
 parser.add_argument(
 	"effect",
 	type = float,
@@ -40,6 +46,19 @@ parser.add_argument(
 args = parser.parse_args( )
 
 # Generate random numbers from normal distributions with means differing by the effect size to populate 3 lists (for 3 groups)
+
+"""
+Eric: It's preferable to have functions be "closed" in the sense that they don't need
+any input other than their arguments and don't alter anything outside of returning
+a value. The explicit reference to args here means this function can't be used outside
+of the context of this script.
+"""
+
+"""
+Eric: Might be interesting/useful to have the option of only one of the groups being
+different rather than all being different to see how that affects power.
+"""
+
 def simulate(n):
 	args2 = (args.effect) * 2
 	control = np.random.normal(0,1,n)
@@ -66,6 +85,14 @@ def repeat_analysis(n):
 	return sigresults
 
 # Calculate the proportion of trials that was statistically significant (p<alpha) and compare with --power, repeat with increasing sample size until result >= --power
+
+"""
+Eric: When using while loops for simulation, it's useful to add an
+escape counter to quit if the loop runs for a ridiculously long time
+(maybe 100 iterations in this case). If someone put in a nonsensical power
+(e.g. 2.0) this would run forever.
+"""
+
 def power_analysis():
 	samplesize = 2
 	pwr = 0
@@ -86,3 +113,7 @@ if args.n:
 	print("Using alpha = {0} with an expected effect size of {1} and {2} subjects per group, this experiment has a power of {3}".format(args.alpha,args.effect,args.n,pwr))
 else:
 	power_analysis()
+
+"""
+Eric: Overall very nicely done!
+"""
