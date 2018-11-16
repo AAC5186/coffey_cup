@@ -1,0 +1,17 @@
+        Section                  Component  Points
+ Files included               Sample input       4
+ Files included              Sample output       4
+ Files included                     script      10
+         Github         Github repo exists       2
+         Github  Github includes all files       6
+         Github                Files match       2
+         README      1 - name/email/github       1
+         README             2 - experience       1
+         README  3 - description of script       2
+         README            4 - module list       1
+         README   5 - description of input       2
+         README        6 - sample commands       2
+         README  7 - description of output       2
+         README     8 - best part of class       1
+         README    9 - worst part of class       1
+      Execution      Custom project points      59
